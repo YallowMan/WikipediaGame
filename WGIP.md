@@ -4,7 +4,7 @@ Author: Carlos Garcia
 
 ## Improvement
 
-As of now the WikipediaGame uses a breadth-first search
+As of now the WikipediaGame uses a breadth-first search for all the hyperlinks of each page, and goes from the given start page and finishes when it reaches the target page. The Improvements I propose are:
 
 ### Caching
 The Wikipedia Game as it sits does not have a way to avoid any redundant searches so a way to fix that would be to implement caching. This would speed up efficiency as well as its able to fetch that info from a directory where the results are stored.By storing the links of each fetched page in a cache, we avoid fetching the same page multiple times. This can reduce the number of requests made to the server, which not only speeds up the script but also reduces the load on the server.
@@ -13,7 +13,7 @@ The Wikipedia Game as it sits does not have a way to avoid any redundant searche
 When working aider an improvement it suggested that I think would work well, that being a double ended queue from a module called collections. Removing elements from the front of a list is slow to say the least, whereas it's quicker for a deque or double ended queue.  This is because adding or removing elements from the front of a deque is a fast operation with popping of elements, whereas removing elements from the front of a list is slow and can significantly slow down the algorithm if the list is long.
 
 
-# Pseudo-code for my modification
+## Pseudo-code for my modification
 ```
  Create an empty dictionary called link_cache
 
@@ -55,7 +55,7 @@ When working aider an improvement it suggested that I think would work well, tha
 
 ```
 
-## Library Added 
+### Library Added 
 ```
 from collections import deque
 ```
