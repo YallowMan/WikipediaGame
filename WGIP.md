@@ -1,30 +1,21 @@
 # Wikipedia Game Improvement Proposal
 
-Author: Carlos Garcia
+Author: Carlos Garcia - Working Solo
+
+Peer Reviewer: Peter Smith
 
 ## Improvement
 
-As of now the WikipediaGame uses a breadth-first search for all the hyperlinks of each page, and goes from the given start page and finishes when it reaches the target page. The Improvements I propose are:
+As of now the WikipediaGame uses a breadth-first search for all the hyperlinks of each page, and goes from the given start page and finishes when it reaches the target page. The Improvement I propose is:
 
-### Caching
-The Wikipedia Game as it sits does not have a way to avoid any redundant searches so a way to fix that would be to implement caching. This would speed up efficiency as well as its able to fetch that info from a directory where the results are stored. By storing the links of each fetched page in a cache, we avoid fetching the same page multiple times. This can reduce the number of requests made to the server, which not only speeds up the script but also reduces the load on the server.
 
-### Deque (Double-ended queue)
+### Deque (Double-ended queue) Two Way Search
 When working aider an improvement it suggested that I think would work well, that being a double ended queue from a module called collections. Removing elements from the front of a list is slow to say the least, whereas it's quicker for a deque or double ended queue. This is because adding or removing elements from the front of a deque is a fast operation with popping of elements, whereas removing elements from the front of a list is slow and can significantly slow down the algorithm if the list is long.
+
 
 
 ## Pseudo-code for my modification
 ```
- Create an empty dictionary called link_cache
-
- Define get_links function with page_url as parameter:
-     If page_url is in link_cache:
-         Return the value of page_url in link_cache
-     Else:
-         Fetch the page and parse it to get the links
-         Store the links in link_cache with page_url as the key
-         Return the links
-
  Import deque from collections
 
 
