@@ -63,7 +63,7 @@ import threading
 ```
 
 ## Milestones
-Milestone 1: Setup the development environment with the necessary libraries and dependecies need (3/28)
+Milestone 1: Setup the development environment with the necessary libraries and dependecies need, reacquaint myself with threading. (3/28)
 
 Milestone 2: Designing the Deque Two Way Search - Based on the pseudocode, design the detailed algorithm for the two-way search. This includes deciding how to split the search into two directions, how to manage the deques and visited sets, and how to combine the results from the two directions. Verification: Have a written plan for the two-way search algorithm, including how to manage the deques and visited sets, and how to combine the results from the two directions. (4/3)
 
