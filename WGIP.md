@@ -71,4 +71,4 @@ Milestone 3: Implement the search_in_direction Function - Implement the function
 
 Milestone 4: Implement the Parallel Processing - Implement the logic to start two threads and perform the search in both directions simultaneously. This includes managing the threads and ensuring that they can run and complete independently. Verification: Have a working implementation that can perform the search in both directions simultaneously, using multithreading. (4/24)
 
-Milestone 5: Testing and Documentation - Test the implementation with different start and end pages to ensure that it works correctly. Based on that optimize any inconsistencies that may pop up and problems that may arise when debugging. (4/31)
+Milestone 5: Testing and Documentation - Test the implementation with different start and end pages to ensure that it works correctly. Based on that optimize any inconsistencies that may pop up and problems that may arise when debugging. (4/30)
