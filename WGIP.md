@@ -64,7 +64,11 @@ import threading
 
 ## Milestones
 Milestone 1: Setup the development environment with the necessary libraries and dependecies need (3/28)
+
 Milestone 2: Designing the Deque Two Way Search - Based on the pseudocode, design the detailed algorithm for the two-way search. This includes deciding how to split the search into two directions, how to manage the deques and visited sets, and how to combine the results from the two directions. Verification: Have a written plan for the two-way search algorithm, including how to manage the deques and visited sets, and how to combine the results from the two directions. (4/3)
+
 Milestone 3: Implement the search_in_direction Function - Implement the function to perform the search in one direction. This function should be able to pop a page from the deque, fetch and process the page in a new thread, check if any of the links are in the opposite visited set, and if not, add the links to the deque and the visited set. This will involve using the threading library to create and manage the threads. Verification: Have a working search_in_direction function that can perform the search in one direction, using multithreading to fetch and process pages. (4/10)
+
 Milestone 4: Implement the Parallel Processing - Implement the logic to start two threads and perform the search in both directions simultaneously. This includes managing the threads and ensuring that they can run and complete independently. Verification: Have a working implementation that can perform the search in both directions simultaneously, using multithreading. (4/24)
+
 Milestone 5: Testing and Documentation - Test the implementation with different start and end pages to ensure that it works correctly. Based on that optimize any inconsistencies that may pop up and problems that may arise when debugging. 
