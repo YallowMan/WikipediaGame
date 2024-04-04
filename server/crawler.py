@@ -17,36 +17,56 @@ def get_links(page_url):
     print(f"Found {len(links)} links on page: {page_url}")
     return links
 
+from collections import deque
+
 def find_path(start_page, finish_page):
-    queue = [(start_page, [start_page], 0)]
-    discovered = set()
+    forward_queue = deque([(start_page, [start_page])])
+    backward_queue = deque([(finish_page, [finish_page])])
+    forward_visited = {start_page}
+    backward_visited = {finish_page}
     logs = []
 
-    # breadth first search
+    # bidirectional search
     start_time = time.time()
     elapsed_time = time.time() - start_time
-    while queue and elapsed_time < TIMEOUT:  
-        (vertex, path, depth) = queue.pop(0)
-        for next in set(get_links(vertex)) - discovered:
-            if next == finish_page:
-                log = f"Found finish page: {next}"
+    while forward_queue and backward_queue and elapsed_time < TIMEOUT:
+        forward_vertex, forward_path = forward_queue.popleft()
+        backward_vertex, backward_path = backward_queue.popleft()
+        for next in set(get_links(forward_vertex)) - forward_visited:
+            if next in backward_visited:
+                log = f"Found meeting point: {next}"
                 print(log)
                 logs.append(log)
                 logs.append(f"Search took {elapsed_time} seconds.")
-                print(f"Search took {elapsed_time} seconds.")  # Add a print statement to log the elapsed time
-                logs.append(f"Discovered pages: {len(discovered)}")
-                return path + [next], logs, elapsed_time, len(discovered) # return with success
+                print(f"Search took {elapsed_time} seconds.")
+                logs.append(f"Discovered pages: {len(forward_visited) + len(backward_visited)}")
+                return forward_path + backward_path[::-1], logs, elapsed_time, len(forward_visited) + len(backward_visited)
             else:
-                log = f"Adding link to queue: {next} (depth {depth})"
+                log = f"Adding link to forward queue: {next}"
                 print(log)
                 logs.append(log)
-                discovered.add(next)
-                queue.append((next, path + [next], depth + 1))
+                forward_visited.add(next)
+                forward_queue.append((next, forward_path + [next]))
+        for next in set(get_links(backward_vertex)) - backward_visited:
+            if next in forward_visited:
+                log = f"Found meeting point: {next}"
+                print(log)
+                logs.append(log)
+                logs.append(f"Search took {elapsed_time} seconds.")
+                print(f"Search took {elapsed_time} seconds.")
+                logs.append(f"Discovered pages: {len(forward_visited) + len(backward_visited)}")
+                return forward_path + backward_path[::-1], logs, elapsed_time, len(forward_visited) + len(backward_visited)
+            else:
+                log = f"Adding link to backward queue: {next}"
+                print(log)
+                logs.append(log)
+                backward_visited.add(next)
+                backward_queue.append((next, backward_path + [next]))
         elapsed_time = time.time() - start_time
     logs.append(f"Search took {elapsed_time} seconds.")
-    print(f"Search took {elapsed_time} seconds.")  # Add a print statement to log the elapsed time
-    logs.append(f"Discovered pages: {len(discovered)}")
-    raise TimeoutErrorWithLogs("Search exceeded time limit.", logs, elapsed_time, len(discovered))
+    print(f"Search took {elapsed_time} seconds.")
+    logs.append(f"Discovered pages: {len(forward_visited) + len(backward_visited)}")
+    raise TimeoutErrorWithLogs("Search exceeded time limit.", logs, elapsed_time, len(forward_visited) + len(backward_visited))
 class TimeoutErrorWithLogs(Exception):
     def __init__(self, message, logs, time, discovered):
         super().__init__(message)
