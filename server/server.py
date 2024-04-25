@@ -21,7 +21,7 @@ def find_path():
         start_page = data['start']
         finish_page = data['finish']
 
-        path, logs, time, discovered = crawler.find_path(start_page, finish_page)
+        path, logs, time, discovered, full_path = crawler.find_path(start_page, finish_page)
 
         elapsed_time = logs[-1]  # This seems like a mistake, as 'elapsed_time' is not used later.
         response = jsonify({'path': path, 'logs': logs, 'time': time, 'discovered': discovered})
