@@ -4,12 +4,11 @@
 Prerequisites: Python
 
 ```
-git clone https://github.com/alexhkurz/WikipediaGame.git
+git clone https://github.com/YallowMan/WikipediaGame.git
 cd WikipediaGame/server
 source setup.sh
 ```
-
-Starting the server:
+To start the server:
 
 ```
 python server.py
