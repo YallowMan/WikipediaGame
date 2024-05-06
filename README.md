@@ -4,7 +4,7 @@
 Prerequisites: Python
 
 ```
-git clone [https://github.com/alexhkurz/WikipediaGame.git](https://github.com/YallowMan/WikipediaGame.git)
+git clone https://github.com/alexhkurz/WikipediaGame.git
 cd WikipediaGame/server
 source setup.sh
 ```
