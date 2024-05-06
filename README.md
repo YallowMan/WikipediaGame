@@ -1,15 +1,10 @@
 # WikipediaGame
 
-<!--At the time of this writing available at http://192.168.16.72:5000/ from inside the Chapman network.-->
-At the time of this writing available at https://wikipiediagame.azurewebsites.net/ 
 ## Installation
-
-(these instructions should work under GNU/Linux and Macos and WSL)
-
 Prerequisites: Python
 
 ```
-git clone https://github.com/alexhkurz/WikipediaGame.git
+git clone [https://github.com/alexhkurz/WikipediaGame.git](https://github.com/YallowMan/WikipediaGame.git)
 cd WikipediaGame/server
 source setup.sh
 ```
