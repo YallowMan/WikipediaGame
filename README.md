@@ -30,9 +30,10 @@ Play the game on [`localhost:5000`](http://127.0.0.1:5000/) (this link will only
 
 - `RATELIMIT` in `server.py`.
 - `TIMEOUT` in `crawler.py`.
-- 
+  
 ## Testing 
-When it comes to testing I used different starting and end pages some that were bound to have something similar in nature and others not so much. Things like [NASA](https://en.wikipedia.org/wiki/NASA) and [Bill Nye](https://en.wikipedia.org/wiki/Bill_Nye) which were in similar types of fields and then the [Congo River](https://en.wikipedia.org/wiki/Congo_River) and [John Wick](https://en.wikipedia.org/wiki/John_Wick) which don't seem to have much correlation. The further apart they were the longer it would take and it was possible for the algorithm to be less successful when searching. It was fairly quick when finding the mid point that links the path between the two when the pages are more closely related or similar which also provided an accurate result.
+- Run the installation steps to start the server and then when you are in the game UI enter two Wikipedia Links in both the "Start Page URL" and "Finish Page URL" fields.
+- When it comes to testing I used different starting and end pages some that were bound to have something similar in nature and others not so much. Things like [NASA](https://en.wikipedia.org/wiki/NASA) and [Bill Nye](https://en.wikipedia.org/wiki/Bill_Nye) which were in similar types of fields and then the [Congo River](https://en.wikipedia.org/wiki/Congo_River) and [John Wick](https://en.wikipedia.org/wiki/John_Wick) which don't seem to have much correlation. The further apart they were the longer it would take and it was possible for the algorithm to be less successful when searching. It was fairly quick when finding the mid point that links the path between the two when the pages are more closely related or similar which also provided an accurate result.
 
 
 
