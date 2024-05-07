@@ -16,8 +16,6 @@ To start the server:
 python server.py
 ```
 
-(For development one may want to use `watchmedo auto-restart -d . -p '*.py' -- python server.py`.)
-
 Play the game on [`localhost:5000`](http://127.0.0.1:5000/) (this link will only work after you started the server on your machine (watch the console in case the port number changed to eg `5001`)).
 
 ## Limitations
