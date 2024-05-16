@@ -19,7 +19,6 @@ If the code above does not start it you may want to use `python3`.
 
 ```
 python3 server.py
-
 ```
 Play the game on [`localhost:5000`](http://127.0.0.1:5000/) (this link will only work after you started the server on your machine (watch the console in case the port number changed to eg `5001`)).
 
