@@ -2,8 +2,6 @@
 
 Author: Carlos Garcia - Working Solo
 
-Peer Reviewer: Peter Smith
-
 ## Improvements
 
 As of now the WikipediaGame uses a breadth-first search for all the hyperlinks of each page, and goes from the given start page and finishes when it reaches the target page. The Improvement I propose is:
