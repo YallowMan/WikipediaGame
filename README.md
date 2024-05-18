@@ -35,7 +35,7 @@ Play the game on [`localhost:5000`](http://127.0.0.1:5000/) (this link will only
 - The UI works as expected only for chrome-based browsers (Chrome, Brave, ...).
 - Only works for wikipedia pages.
 - May have problems on public networks where connection will be reset by peer.
-- Sometimes when it finds the meeting point between the two too quickly it will show a result of 0 seconds, but is still around that quick of a time.'
+- Sometimes when it finds the meeting point between the two too quickly it will show a result of 0 seconds, but is still around that quick of a time.
 - Incorrectly typing the name of a Wikipedia page like missing underscores for spaces may result in no answer or a much longer time.
   
 ## Future Work
