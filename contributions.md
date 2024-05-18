@@ -3,11 +3,11 @@
   
 I altered the following in `server.py`:
 - Added a `get_inbound_links` function which takes the Wikipedia page URL finishing page and returns a list of all Wikipedia pages that link to it. It uses the Wikipedia API to get the list of backlinks for the given page.
-- Altered the `find_path` function to preform a bidirectional search using two deques to preform the search in both directions simultaneously. The search stopos when a common page is found in both directions and uses a form of threading, where it creates a process pool to fetch the links from multiple pages concurrently.
+- Altered the `find_path` function to preform a bidirectional search using two deques to preform the search in both directions simultaneously. The search stops when a common page is found in both directions and uses a form of threading, where it creates a process pool to fetch the links from multiple pages concurrently.
 
 ## Goal
-- The goal for this project was to be an improvement to the original WikipediaGame started by Alexander Kurz, by focusing entirely on speed by using a bidrectional search rather than a Breadth-First Search.
-- The bidrectional search having two searches in each direction, one using the normal method that goes forward with links and the other using backlinks so that they eventually converge onto each other and give a midpoint and thus a path.
+- The goal for this project was to be an improvement to the original WikipediaGame started by Alexander Kurz, by focusing entirely on speed by using a bidirectional search rather than a Breadth-First Search.
+- The bidirectional search having two searches in each direction, one using the normal method that goes forward with links and the other using backlinks so that they eventually converge onto each other and give a midpoint and thus a path.
   
 ## AI
 I used both Aider and ChatGPT for pieces of code generation and debugging (as advised in the project). 
@@ -51,7 +51,7 @@ Search took 249.585745096206665 seconds
 Discovered pages: 15501 
 ```
 
-My version of the algorithm significantly improved how quickly the search took overall as well as how many pages needed to be opened, because its not as limiting when using backlinks via the API and didn't limit the paths of legnth 2 like the original.
+My version of the algorithm significantly improved how quickly the search took overall as well as how many pages needed to be opened, because its not as limiting when using backlinks via the API and didn't limit the paths of length 2 like the original.
 
 ### Sample Input 3
 - Starting URL: `https://en.wikipedia.org/wiki/OLED`
@@ -74,9 +74,9 @@ Discovered pages: 38013
 My version of the algorithm would sometimes be too quick to count the search time and would give a flat 0 seconds of time it took for the search. While this does look like an error, it was still able to find a midpoint as well. With a dramatic decrease in discovered pages as well which seems to be the case most of the time.
 
 ## Improvement Comparison
-- The main purpose of the improvements proposed was to enhance overall speed by integrating backlink fetching via the Wikipedia API to avoid webscraping and speed up the process.
+- The main purpose of the improvements proposed was to enhance overall speed by integrating backlink fetching via the Wikipedia API to avoid web scraping and speed up the process.
 ### Benchmarking
-- It was able to on average always outdo the previous algorithm by 90% compared to a breadth first search approach. Tested with different start and finish pages to see how robust it was on average agaisnt the average of the breadth-first search approach.
+- It was able to on average always outdo the previous algorithm by 90% compared to a breadth first search approach. Tested with different start and finish pages to see how robust it was on average against the average of the breadth-first search approach.
 - The program can fairly quickly find a connection between two pages compared to the original version of the algorithm, but at first glance may not seem like its all too better.
   
 ## Final Notes
