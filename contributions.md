@@ -74,7 +74,9 @@ Discovered pages: 38013
 My version of the algorithm would sometimes be too quick to count the search time and would give a flat 0 seconds of time it took for the search. While this does look like an error, it was still able to find a midpoint as well. With a dramatic decrease in discovered pages as well which seems to be the case most of the time.
 
 ## Improvement Comparison
-- The main purpose of the improvements proposed was to enhance overall speed by integrating backlink fetching via the Wikipedia API to avoid webscraping and speed up the process. 
+- The main purpose of the improvements proposed was to enhance overall speed by integrating backlink fetching via the Wikipedia API to avoid webscraping and speed up the process.
+### Benchmarking
+- It was able to on average always outdo the previous algorithm by 90% compared to a breadth first search approach. Tested with different start and finish pages to see how robust it was on average agaisnt the average of the breadth-first search approach.
 - The program can fairly quickly find a connection between two pages compared to the original version of the algorithm, but at first glance may not seem like its all too better.
   
 ## Final Notes
