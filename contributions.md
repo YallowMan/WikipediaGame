@@ -12,8 +12,6 @@ I altered the following in `server.py`:
 ## AI
 I used both Aider and ChatGPT for pieces of code generation and debugging (as advised in the project). 
 
-## Issue
-
 ## Testing
 ### Sample Input 1 
 - Starting URL: `https://en.wikipedia.org/wiki/Michelangelo`
