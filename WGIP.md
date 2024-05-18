@@ -6,11 +6,14 @@ Author: Carlos Garcia - Working Solo
 
 As of now the WikipediaGame uses a breadth-first search for all the hyperlinks of each page, and goes from the given start page and finishes when it reaches the target page. The Improvement I propose is:
 
-
 ### Deque (Double-ended queue) Two Way Search
 When working aider an improvement it suggested that I think would work well, that being a double ended queue from a module called collections. Removing elements from the front of a list is slow to say the least, whereas it's quicker for a deque or double ended queue. This is because adding or removing elements from the front of a deque is a fast operation with popping of elements, whereas removing elements from the front of a list is slow and can significantly slow down the algorithm if the list is long. Creating two sets to keep track of the discovered pages in both directions to find a common page that they share.
+
 ### Parallel Processing
 Here it also preforms the searches as the same time but much quicker using threading. Both threads are not alternating rather they are doing it at the same time with it using the double ended deque two way search. 
+
+### Backlinks via Wikipedia API (Update)
+Another improvement I wanted to do was make it so that one of the directions in the bidirectional search particularly from the finish page was to use the Wikipedia API. This would make it so that I can grab any and all backlinks for that specific page and then continue to do so for the others. This would open many pages where each queue can look through and if they find a link in either queue it can be considered the midpoint. With the api_url as `api_url = "https://en.wikipedia.org/w/api.php"` to get API requests a list of all backlinks.
 
 
 ## Pseudo-code for my modification
