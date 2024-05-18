@@ -1,5 +1,6 @@
 # Contributions
 - This was a solo project, so I developed and worked on my own.
+  
 I altered the following in `server.py`:
 - Added a `get_inbound_links` function which takes the Wikipedia page URL finishing page and returns a list of all Wikipedia pages that link to it. It uses the Wikipedia API to get the list of backlinks for the given page.
 - Altered the `find_path` function to preform a bidirectional search using two deques to preform the search in both directions simultaneously. The search stopos when a common page is found in both directions and uses a form of threading, where it creates a process pool to fetch the links from multiple pages concurrently.
