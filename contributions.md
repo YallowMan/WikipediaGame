@@ -12,27 +12,48 @@ The program can fairly quickly find a connection between two pages compared to t
 - Starting URL: `https://en.wikipedia.org/wiki/Michelangelo`
 - Finish URL: `https://en.wikipedia.org/wiki/The_Godfather`
 My Algorithm:
-`
+```
 Found meeting point: https://en.wikipedia.org/wiki/Italians
 Search took 4.945229768753052 seconds.
 Discovered pages: 3727
-`
+```
 
 Previous Algorithm:
-`
-Found finish page: [https://en.wikipedia.org/wiki/Italians](https://en.wikipedia.org/wiki/The_Godfather)
+```
+Found finish page: https://en.wikipedia.org/wiki/The_Godfather
 Search took 102.03139114379883 seconds.
 Discovered pages: 28677
-`
+```
 ### Sample Input 2
-- Starting URL: ``
-- Finish URL: ``
+- Starting URL: `https://en.wikipedia.org/wiki/Stardew_Valley`
+- Finish URL: `https://en.wikipedia.org/wiki/Alpaca`
 My Algorithm:
-`
-
-`
+```
+Found meeting point: https://en.wikipedia.org/wiki/Andes
+Search took 1.391754388809204 seconds.
+Discovered pages: 1781
+```
 
 Previous Algorithm:
-`
+```
+Found finish page: https://en.wikipedia.org/wiki/Alpaca
+Search took 249.585745096206665 seconds
+Discovered pages: 15501 
+```
 
-`
+### Sample Input 3
+- Starting URL: `https://en.wikipedia.org/wiki/OLED`
+- Finish URL: `https://en.wikipedia.org/wiki/Pi`
+My Algorithm:
+```
+Found meeting point: https://en.wikipedia.org/wiki/Frequency
+Search took 0.0 seconds.
+Discovered pages: 921
+```
+
+Previous Algorithm:
+```
+Found finish page: https://en.wikipedia.org/wiki/Pi
+Search took 199.12512159347534 seconds.
+Discovered pages: 38013
+```
